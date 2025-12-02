@@ -19,7 +19,7 @@
     <header>
       <nav>
         <div id="logotype-wrapper" class="logo">
-          <a href="index.html"> LOGO-TYPE </a>
+          <a href="index.html"> <img src="img/logo.svg" alt="" /> </a>
         </div>
         <ul class="menu">
           <li><a class="menuItem" href="instruction.html">Nærkontakt </a></li>
@@ -34,20 +34,89 @@
     </header>
 
     <main>
-      <h1>INDBERET</h1>
+      <h1>HAR DU SET EN ANOMALY?</h1>
       <section id="form-section">
         <article id="form-info">
-          <h2>Overskrift</h2>
-          <p>Tekst</p>
+          <h2>Angiv os disse informationer</h2>
         </article>
-        <form id="webform"></form>
+        <form aria-label="EK signup form">
+          <div class="form-group">
+            <label for="first_name">Fornavn</label>
+            <input
+              type="text"
+              id="first_name"
+              name="first_name"
+              aria-describedby="fname-error"
+              required
+            />
+            <p class="error-message" id="fname-error">Please enter a value</p>
+          </div>
+
+          <div class="form-group">
+            <label for="last_name">Efternavn</label>
+            <input
+              type="text"
+              id="last_name"
+              name="last_name"
+              aria-describedby="lname-error"
+              required
+            />
+            <p class="error-message" id="lname-error">Please enter a value</p>
+          </div>
+
+          <div class="form-group">
+            <label for="hvor">Hvor fandt du uhyret?</label>
+            <input
+              type="hvor"
+              id="hvor"
+              name="hvor"
+              aria-describedby="email-error"
+              required
+            />
+            <p class="error-message" id="email-error">Please enter a value</p>
+          </div>
+
+          <div class="form-group">
+            <label for="adress">Adresse</label>
+            <input
+              type="adress"
+              id="adress"
+              name="adress"
+              aria-describedby="password-instruction password-error"
+              required
+            />
+            <p class="error-message" id="password-error"></p>
+          </div>
+
+          <div class="form-group">
+            <label for="accept_terms">
+              <input
+                type="checkbox"
+                id="accept_terms"
+                name="accept_terms"
+                value="yes"
+                aria-describedby="terms-error"
+                required
+              />
+              Er disse informationer sande?
+            </label>
+            <p class="error-message" id="terms-error">Please tick the box</p>
+          </div>
+
+          <button>Sign up</button>
+        </form>
       </section>
       <section id="form-summary">
-        <h2>Summary</h2>
-        <article>
-          <p class="placeholder">Opsummering</p>
-        </article>
+        <h2>Opsummering</h2>
+        <div>
+          <p>Fornavn: <span id="first_name_output"></span></p>
+          <p>Efternavn: <span id="last_name_output"></span></p>
+          <p>Location af Spotning: <span id="email_output"></span></p>
+          <p>Adresse: <span id="password_output"></span></p>
+          <p>Sandhed: <span id="terms_output"></span></p>
+        </div>
       </section>
+      <button id="toggle">Klik her for mørk tilstand</button>
     </main>
     <footer>
       <nav class="some">
@@ -76,6 +145,7 @@
       </nav>
     </footer>
     <script src="js/burger.js"></script>
-    <!-- <script src="js/main.js"></script> -->
+    <script src="js/register.js"></script>
+    <script src="js/main.js"></script>
   </body>
 </html>
